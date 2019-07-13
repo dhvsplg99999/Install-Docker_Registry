@@ -10,7 +10,7 @@
 [Cấu hình Docker kết nối đến Docker Registry trên các máy hosts](#use)
 
 
-[Thực hành pull image để test kết nối](#test)
+[Thực hành pus image để test kết nối](#test)
 
 
 
