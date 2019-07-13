@@ -68,6 +68,10 @@ Khi cài đặtxong chúng ta tiến hành set up password:
 htpasswd -c -B /etc/docker-distribution/dockerpasswd admin
 ```
 tiến hành chỉnh sửa Docker Registry configuration file.
+location of Docker Registry file : `/etc/docker-distribution/registry/config.yml`
+
+
+
 ```
 version: 0.1
 log:
@@ -134,11 +138,11 @@ Dăng nhập vào Docker Regisstry
 docker login sds-docker-registry.example.com:5000
 ```
 
-Pull images lên Dockẻ Registry 
+Push  images lên Docker  Registry 
 
 ```
-docker pull sds-docker-registry.example.com/jenkins
+docker push  sds-docker-registry.example.com/jenkins
 ```
 
 
-Nếu pull images thành công thì cho thấy đã kết nối được đến với Docker Registry .
+Nếu push  images thành công thì cho thấy đã kết nối được đến với Docker Registry .
