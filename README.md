@@ -146,3 +146,30 @@ docker push  sds-docker-registry.example.com/jenkins
 
 
 Nếu push  images thành công thì cho thấy đã kết nối được đến với Docker Registry .
+
+Check image trên Registry tại : `/var/lib/registry/docker/registry/v2/repositories`
+
+
+#### Cấu hình Docker Registry hoạt động như một cache :
+
+Cấu hình trên Registry : Thêm dòng sau vào file cấu hình docker(` /etc/docker/registry/config.yml `)
+```
+proxy:
+  remoteurl: https://hub.docker.com/
+```
+
+Cấu hình trên Hosts :
+Viết thêm vào file ` /etc/docker/daemon.jon` 
+```
+{
+  "registry-mirrors": ["https://sds-docker-registry.example.com:5000"]
+}
+
+```
+
+Khởi động lại daemon và docker
+
+```
+systemctl deamon-reload
+systemctl restart docker 
+```
